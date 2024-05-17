@@ -4,6 +4,7 @@ from api import search_name
 
 
 app = Flask(__name__)
+app.debug= True
 app.config['SECRET_KEY']='shhh'
 
 toolbar = DebugToolbarExtension(app)
