@@ -17,7 +17,7 @@ class FlaskTest(unittest.TestCase):
         response = search_name('Margarita')
         self.assertIn('drinks', response)
         drinks_list = [drink['strDrink'] for drink in response['drinks']]
-        self.assertIn('Margarita', drinks_list)
+        self.assertIn('Margarita', drinks_list) #check to see if margarita is inside the list of drinks.
 
 
     def test_search_cocktail_invalid(self):
