@@ -20,16 +20,10 @@ class FlaskTest(unittest.TestCase):
         self.assertIn('Margarita', drinks_list)
 
 
-        
-
     def test_search_cocktail_invalid(self):
         response = search_name('InvalidCocktailName')
         
         self.assertIn('error', response)
         self.assertEqual(response['error'], 'No drinks found with that name')
 
-        
-
-if __name__ == '__main__':
-    unittest.main()
-
+    
