@@ -13,9 +13,13 @@ def search_name(cocktail_name):
     #checks if request was successfull, 200
     if response.status_code == 200:
         data = response.json()
-        return data
+        drinks = data.get('drinks')
+        if drinks:
+            return data
+        else: 
+            return {'error': 'No drinks found with that name'}
     else:
         #if there is an error send a error message
         print(f"Error: Failed to fetch data from API. Status code: {response.status_code}")
-        return {}
+        return {'error': 'API request failed'}
     

@@ -1,5 +1,6 @@
 import unittest
 from app import app
+from api import search_name
 
 class FlaskTest(unittest.TestCase):
 
@@ -13,15 +14,20 @@ class FlaskTest(unittest.TestCase):
         
 
     def test_search_cocktail(self):
-        response = self.app.post('/search', data={'search-form': 'Margarita'})
-        print(response.data)  # Print response data for debugging
-        self.assertEqual(response.status_code, 200)
+        response = search_name('Margarita')
+        self.assertIn('drinks', response)
+        drinks_list = [drink['strDrink'] for drink in response['drinks']]
+        self.assertIn('Margarita', drinks_list)
+
+
         
 
     def test_search_cocktail_invalid(self):
-        response = self.app.post('/search', data={'search-form': 'InvalidCocktailName'})
-        print(response.data)  # Print response data for debugging
-        self.assertEqual(response.status_code, 200)
+        response = search_name('InvalidCocktailName')
+        
+        self.assertIn('error', response)
+        self.assertEqual(response['error'], 'No drinks found with that name')
+
         
 
 if __name__ == '__main__':
