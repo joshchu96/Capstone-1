@@ -13,8 +13,7 @@ def search_name(cocktail_name):
     #checks if request was successfull, 200
     if response.status_code == 200:
         data = response.json()
-        cocktail_list = [cocktail['strDrink'] for cocktail in data['drinks']]
-        return cocktail_list
+        return data
     else:
         #if there is an error send a error message
         print(f"Error: Failed to fetch data from API. Status code: {response.status_code}")
