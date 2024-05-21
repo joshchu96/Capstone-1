@@ -7,11 +7,16 @@
     <title>Recipe App</title>
     <link rel="stylesheet" href="/static/homepage.css">
 </head>
+
 <body>
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="{{ url_for('login') }}">Login</a>
+        </div>
+    </nav>
     <div class="container">
         <h1>Just One Drinkbook</h1>
         <!-- Search Form -->
-        <div class="sub-container">
             <form id="searchform" action="/search" method="POST">
             
                 <input type="text" id="search-input" name="search-form" placeholder="Look for drink recipes...">
@@ -19,7 +24,7 @@
                 <button type="submit">Search</button>
 
             </form>
-        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/static/main.js"></script>

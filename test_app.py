@@ -23,7 +23,9 @@ class FlaskTest(unittest.TestCase):
     def test_search_cocktail_invalid(self):
         response = search_name('InvalidCocktailName')
         
-        self.assertIn('error', response)
-        self.assertEqual(response['error'], 'No drinks found with that name')
+        self.assertIn('drinks', response) 
+        self.assertEqual(response['drinks'], None) 
 
-    
+
+
+

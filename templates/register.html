@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/login.css"/>
+
+    
+
+    <title>Registration Page</title>
+</head>
+<body>
+    <div class="container">
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {% for field in form 
+                if field.widget.input_type !='hidden' %}
+
+                <div class="field-label"> {{ field.label }} </div>
+                <div class="field"> {{ field }} </div>
+
+            {%endfor%}
+            <br>
+            
+            <button>Register</button>
+        </form>
+
+        <div>
+
+            <p>Already have an account?</p> 
+            <a href="{{ url_for('login') }}" class="register-link">Login</a>
+        
+</body>
+</html>

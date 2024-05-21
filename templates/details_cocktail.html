@@ -9,13 +9,15 @@
 <body class="bg-dark text-light">
     <div class="container mt-5">
         <h1 class="text-center">{{ cocktail_name }}</h1>
+        
         <div class="text-center">
-            <img src="{{ image }}" alt="{{ cocktail_name }}" class="img-fluid" style="max-width: 300px;">
+            <img src="{{ image }}" alt="{{ cocktail_name }}" class="img-fluid" style="max-width: 300px; border-radius: 20px;">
         </div>
+        <br>
         <h2 class="border-bottom pb-2">Instructions</h2>
         <p>{{ instructions }}</p>
         <div>
-            <h2 class="border-bottom pb-2">What you need for this cocktail</h2>
+            <h2 class="border-bottom pb-2">What you need</h2>
             <table class="table table-dark table-striped">
                 <thead>
                     <tr>
@@ -34,6 +36,11 @@
             </table>
         </div>
         <div class="text-center mt-4">
+            <form action="{{ url_for('like_cocktail') }}" method="POST">
+                <input type="hidden" name="cocktail_name" value="{{ cocktail_name }}">
+                <button type="submit" class="btn btn-primary">Like/Save to Profile</button>
+            </form>
+            <br>
             <a href="/" class="btn btn-secondary">Return to Homepage</a>
         </div>
     </div>

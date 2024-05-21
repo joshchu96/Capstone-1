@@ -1,0 +1,93 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1d2124;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #2F4F4F;
+    color: #F8F8FF;
+}
+
+.container h2 {
+    color:#a4cece;
+    font-style: italic;
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+ol {
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.cocktail-item {
+    display: flex; 
+    align-items: center;   
+}
+
+.cocktail-item a {
+    color:wheat;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.cocktail-item a:hover {
+    text-decoration: underline antiquewhite;
+}
+
+.remove-form {
+    margin-left: 10px; 
+}
+
+.remove-form button {
+    background-color: transparent;
+    border: none;
+    color: red;
+    cursor: pointer;
+    padding: 0;
+    font-size: inherit;
+    text-align: center;
+}
+
+.remove-form button:hover {
+    color: darkred;
+}
+
+.add-btn a {
+    color: cyan;
+}
+
+.logout-btn {
+    background-color: #1d2124;
+    color:#F8F8FF;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    border:none;
+    outline: none;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    
+}
+
+.logout-btn:hover {
+    background-color:  #262626;
+}

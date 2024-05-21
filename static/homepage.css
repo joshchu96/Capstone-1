@@ -7,7 +7,36 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-}  
+} 
+
+.navbar {
+    width: 100%;
+    background-color:#2F4F4F;
+    padding: 10px 0;
+    position: fixed; /* Ensure the navbar stays at the top */
+    top: 0;
+    left: 0;
+}
+
+.nav-links {
+    text-align: right;
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: inline-block;
+    position: relative; 
+}
+
+.nav-links a:hover {
+    text-decoration: underline #a4cece 2px;
+
+    
+}
+ 
 
 .container {
     max-width: 800px;
@@ -29,6 +58,7 @@ body {
     font-size: 20px;
     width: 90%;
     text-align: center;
+    font-style: italic;
     color: whitesmoke
 }
   
@@ -70,13 +100,11 @@ button {
     display: block;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color:  #262626;
 }
-
 
 
 

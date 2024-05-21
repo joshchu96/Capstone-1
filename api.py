@@ -13,8 +13,8 @@ def search_name(cocktail_name):
     #checks if request was successfull, 200
     if response.status_code == 200:
         data = response.json()
-        drinks = data.get('drinks')
-        if drinks:
+        
+        if 'error' not in data:
             return data
         else: 
             return {'error': 'No drinks found with that name'}

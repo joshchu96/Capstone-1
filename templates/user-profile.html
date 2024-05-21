@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/user-profile.css">
+    <title>Profile</title>
+</head>
+<body>
+    <div class="container">
+        <h2>{{ user.username }}'s' Recipe Lists</h2>
+        <ol>
+            {% for cocktail in user.liked_cocktails %} 
+                <li>
+                    <div class="cocktail-item">
+                        <a href="{{ url_for('cocktail_details', cocktail_name=cocktail.cocktail_name) }}">{{ cocktail.cocktail_name }}</a>
+                
+                        <form action="{{ url_for('remove_like',cocktail_name=cocktail.cocktail_name) }}" method="POST" class="remove-form">
+                            <button>X</button>
+                        </form>
+                    </div>
+                </li>
+            {% endfor %}
+        </ol>
+
+        <div>
+            <span class="add-btn">
+                <a href="{{ url_for('homepage') }}">Click here</a>
+            </span> to add more cocktails to your collection
+        </div>
+
+        <form action="/logout" method="GET">
+            <button class="logout-btn">Logout</button>
+        </form>
+    </div>
+
+</body>
+</html>
