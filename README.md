@@ -1,3 +1,6 @@
+API: cocktailDB
+URL: https://www.thecocktaildb.com/api.php
+
 
 Database Schema 
 Crows Foot Diagram
