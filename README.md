@@ -10,30 +10,13 @@ first_name:text,notnull
 last_name:text,notnull 
 
 
-
-USER_LIKES_DRINKS
+LikedCocktail
 Id: primarykey
-User_id: ForeignKey
-Drink_id: ForeignKey
+user_id: Integer, Foreignkey(user.id) not null
+cocktail_name: String not null
+user = relationship 'USER' backref='liked_cocktails
 
 
 
 
-Drinks
-Id: primarykey
-Name: text, notnull
-Description: text
-Image_url: text
 
-
-
-
-Relationships
-
-USER.id ( one —-----------------------> many ) USER_LIKES_DRINKS.user_id
-
-USER_LIKES_DRINKS.drink_id (many ←—---------------- one ) Drinks.id
-
-1 User can like many Drinks. 
-1 Drink can be liked by many Users. 
-This schema shows an association table (USER_LIKES_DRINKS) that is linked by adjacent tables (USERS) && (DRINKS).
